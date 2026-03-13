@@ -69,7 +69,7 @@ export function AnalysisForm() {
                   key={tool.id}
                   type="button"
                   onClick={() => setSelectedTool(tool.id)}
-                  className={`p-3 text-left rounded-xl border transition-all ${
+                  className={`p-3 text-left rounded-xl border transition-all cursor-pointer ${
                     selectedTool === tool.id
                       ? 'border-emerald-500 bg-emerald-500/10 ring-1 ring-emerald-500'
                       : 'border-white/10 bg-white/5 hover:bg-white/10'

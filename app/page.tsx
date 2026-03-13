@@ -16,10 +16,10 @@ export default function Home() {
           </span>
         </div>
         <div className="flex gap-4">
-          <Link href="/login" className="px-4 py-2 text-sm font-medium hover:bg-white/5 rounded-md transition-colors">
+          <Link href="/login" className="px-4 py-2 text-sm font-medium hover:bg-white/5 rounded-md transition-colors cursor-pointer">
             Login
           </Link>
-          <Link href="/signup" className="bg-gradient-primary text-white px-4 py-2 rounded-md font-medium hover:opacity-90 transition-opacity shadow-lg shadow-emerald-500/20">
+          <Link href="/signup" className="bg-gradient-primary text-white px-4 py-2 rounded-md font-medium hover:opacity-90 transition-opacity shadow-lg shadow-emerald-500/20 cursor-pointer">
             Get Started
           </Link>
         </div>
@@ -44,10 +44,10 @@ export default function Home() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md justify-center">
-          <Link href="/signup" className="h-12 px-8 flex items-center justify-center rounded-md font-medium transition-all bg-gradient-primary text-white hover:opacity-90 shadow-lg shadow-emerald-500/20 w-full sm:w-auto text-lg">
+          <Link href="/signup" className="h-12 px-8 flex items-center justify-center rounded-md font-medium transition-all bg-gradient-primary text-white hover:opacity-90 shadow-lg shadow-emerald-500/20 w-full sm:w-auto text-lg cursor-pointer">
             Start Free Trial
           </Link>
-          <Link href="/dashboard" className="h-12 px-8 flex items-center justify-center rounded-md font-medium transition-all border border-border bg-transparent hover:bg-white/5 text-foreground w-full sm:w-auto text-lg">
+          <Link href="/dashboard" className="h-12 px-8 flex items-center justify-center rounded-md font-medium transition-all border border-border bg-transparent hover:bg-white/5 text-foreground w-full sm:w-auto text-lg cursor-pointer">
             Live Demo
           </Link>
         </div>

@@ -32,7 +32,7 @@ export default function LoginPage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-mesh-gradient px-4">
-      <Link href="/" className="mb-8 flex items-center gap-2">
+      <Link href="/" className="mb-8 flex items-center gap-2 cursor-pointer">
         <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">
           <Sparkles className="text-white w-6 h-6" />
         </div>
@@ -86,7 +86,7 @@ export default function LoginPage() {
         </CardContent>
         <CardFooter className="flex flex-wrap justify-center gap-1 text-sm text-gray-500">
           <span>Don&apos;t have an account?</span>
-          <Link href="/signup" className="text-emerald-500 hover:text-emerald-400 font-medium transition">
+          <Link href="/signup" className="text-emerald-500 hover:text-emerald-400 font-medium transition cursor-pointer">
             Sign up
           </Link>
         </CardFooter>
