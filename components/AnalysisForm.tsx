@@ -99,6 +99,7 @@ export function AnalysisForm() {
                 <p className="font-bold">{error}</p>
                 {result?.gemini_error && <p className="text-xs opacity-70">Gemini: {result.gemini_error}</p>}
                 {result?.groq_error && <p className="text-xs opacity-70">Groq: {result.groq_error}</p>}
+                {result?.db_error && <p className="text-xs opacity-70">Database: {JSON.stringify(result.db_error)}</p>}
               </div>
             )}
 

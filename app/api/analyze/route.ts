@@ -71,7 +71,10 @@ export async function POST(request: Request) {
 
     if (dbError) {
       console.error('Database Error:', dbError);
-      return NextResponse.json({ error: 'Failed to save analysis result' }, { status: 500 });
+      return NextResponse.json({ 
+        error: 'Failed to save analysis result',
+        db_error: dbError
+      }, { status: 500 });
     }
 
     return NextResponse.json({ 
