@@ -1,4 +1,4 @@
-export type Tool = 'code_review' | 'security_audit' | 'performance_check' | 'bug_analysis';
+export type Tool = 'code_review' | 'security_audit' | 'performance_check' | 'bug_analysis' | 'meeting_refiner';
 
 export const PROMPT_TEMPLATES: Record<Tool, (input: string) => string> = {
   code_review: (input) => `As an expert software engineer, conduct a comprehensive code review of the following snippet. Highlight potential issues, suggest improvements for readability and maintainability, and ensure it follows best practices.
@@ -19,5 +19,14 @@ ${input}`,
   bug_analysis: (input) => `As a senior debugger, analyze the following code and the described issue to find the root cause of the bug. Provide a clear explanation and a corrected version of the code.
 
 Code and Issue description:
+${input}`,
+
+  meeting_refiner: (input) => `As a professional executive assistant, take the following raw meeting notes and refine them into a professional, structured document. Include:
+1. Executive Summary
+2. Key Discussion Points
+3. Action Items (with owners if specified)
+4. Next Steps
+
+Raw Notes:
 ${input}`,
 };

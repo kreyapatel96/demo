@@ -11,6 +11,7 @@ const tools: { id: Tool; label: string; description: string }[] = [
   { id: 'security_audit', label: 'Security Audit', description: 'Find vulnerabilities and risks' },
   { id: 'performance_check', label: 'Performance', description: 'Optimize for speed and memory' },
   { id: 'bug_analysis', label: 'Bug Analysis', description: 'Find root cause of issues' },
+  { id: 'meeting_refiner', label: 'Meeting Refiner', description: 'Turn raw notes into professional docs' },
 ]
 
 export function AnalysisForm() {
@@ -40,6 +41,7 @@ export function AnalysisForm() {
         setInputText('')
       } else {
         setError(data.error || 'Failed to analyze')
+        setResult(data) // Store error details in result to show them
       }
     } catch (err) {
       setError('An error occurred during analysis')
@@ -61,7 +63,7 @@ export function AnalysisForm() {
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Tool Selector */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
               {tools.map((tool) => (
                 <button
                   key={tool.id}
@@ -93,8 +95,10 @@ export function AnalysisForm() {
             </div>
 
             {error && (
-              <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-500 text-sm">
-                {error}
+              <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-500 text-sm space-y-2">
+                <p className="font-bold">{error}</p>
+                {result?.gemini_error && <p className="text-xs opacity-70">Gemini: {result.gemini_error}</p>}
+                {result?.groq_error && <p className="text-xs opacity-70">Groq: {result.groq_error}</p>}
               </div>
             )}
 
